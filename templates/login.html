@@ -1,0 +1,60 @@
+{% extends "index.html" %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+{% endblock %}
+
+{% block content %}
+<div class="form-class">
+    <div class="title-container">
+        <img src="static/img/mars-2-7.png">
+        <h1>Авторизация</h1>
+    </div>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.astronaut_id.label }}<br>
+            {{ form.astronaut_id(class="form-control") }}<br>
+            {% for error in form.astronaut_id.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.astronaut_password.label }}<br>
+            {{ form.astronaut_password(class="form-control", type="password") }}<br>
+            {% for error in form.astronaut_password.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+
+        </p>
+
+        <p>
+            {{ form.captain_id.label }}<br>
+            {{ form.captain_id(class="form-control", type="form-control") }}<br>
+            {% for error in form.captain_id.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.captain_password.label }}<br>
+            {{ form.captain_password(class="form-control", type="password") }}<br>
+            {% for error in form.captain_password.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+
+        <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    </form>
+</div>
+{% endblock %}

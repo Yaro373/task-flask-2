@@ -1,4 +1,15 @@
 h4 {
 	color: gray;
-	margin-left: 20 px
+	margin-left: 20 px;
+}
+
+.form-class {
+    margin-left: 20rem;
+    margin-right: 20rem;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
 }
