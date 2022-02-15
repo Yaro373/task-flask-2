@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block title %} {{ values['title'] }} {% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+{% endblock %}
+
+{% block content %}
+<p>Фамилия: {{ values['surname'] }}</p>
+<p>Имя: {{ values['name'] }}</p>
+<p>Образование: {{ values['education'] }}</p>
+<p>Профессия: {{ values['profession'] }}</p>
+<p>Пол: {{ values['sex'] }}</p>
+<p>Мотивация: {{ values['motivation'] }}</p>
+<p>Готовы остаться на Марсе? {{ values['ready'] }}</p>
+{% endblock %}
